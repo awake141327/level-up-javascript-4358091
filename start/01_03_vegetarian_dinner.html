@@ -9,9 +9,6 @@
 </head>
 
 <body>
-  <!-- To run this file right click the file in the navigation bar and select "Open with live server. Then open the developer tools in the browser and head to the console window."-->
-
-  <!-- Use this element to render your menu -->
   <ul id="menu"></ul>
 
   <script>
@@ -33,7 +30,18 @@
         isVegetarian: true
       }
     ]
-    // Write your code here
+    
+    function vegetarianMenu(menu) {
+      const menuEle = document.getElementById("menu");
+      const newMenu = menu.filter(item => item.isVegetarian === true);
+      newMenu.forEach(item => {
+        let dish = document.createElement("li");
+        dish.textContent = item.name;
+        menuEle.appendChild(dish);
+      })
+    }
+
+    vegetarianMenu(menu);
 
   </script>
 </body>
