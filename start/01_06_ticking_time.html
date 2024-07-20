@@ -9,14 +9,21 @@
 </head>
 
 <body>
-  <!-- To run this file right click the file in the navigation bar and select "Open with live server. Then open the developer tools in the browser and head to the console window."-->
-
-  <!-- Use this element to render your clock -->
+  
   <div id="clock"></div>
 
   <script>
-    // Write your code here
-    
+    const clock = document.getElementById('clock');
+
+    setInterval(() => {
+      const d = new Date();
+      const hours = d.getHours();
+      const minutes = d.getMinutes();
+      const seconds = d.getSeconds();
+      
+      clock.textContent = `${hours} : ${minutes} : ${seconds}`
+    }, 1000)
+
   </script>
 </body>
 
