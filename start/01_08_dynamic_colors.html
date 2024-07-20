@@ -9,15 +9,25 @@
 </head>
 
 <body>
-  <!-- To run this file right click the file in the navigation bar and select "Open with live server. Then open the developer tools in the browser and head to the console window."-->
-
-  <!-- Use these elements to trigger the color change -->
   <button id="blue">Blue</button>
   <button id="pink">Pink</button>
   <button id="green">Green</button>
 
   <script>
-    // Write your code here
+      const bgColorBlue = changeColor("#0f62f3");
+      const bgColorPink = changeColor("#ff7eb6");
+      const bgColorGreen = changeColor("#42be65");
+
+      const blue = document.getElementById('blue').addEventListener("click", bgColorBlue);
+      const pink = document.getElementById('pink').addEventListener("click", bgColorPink);
+      const green = document.getElementById('green').addEventListener("click", bgColorGreen);
+
+      function changeColor(color) {
+        return function() {
+          document.body.style.background = color;
+        }
+      }
+    
 
   </script>
 </body>
