@@ -9,13 +9,32 @@
 </head>
 
 <body>
-  <!-- To run this file right click the file in the navigation bar and select "Open with live server. Then open the developer tools in the browser and head to the console window."-->
-
-  <!-- Use this element to get to the next stop-->
   <button id="next-stop">Next Stop</button>
 
   <script>
-    // Write your code here
+    const nextStopBtn = document.getElementById("next-stop");
+    nextStopBtn.addEventListener("click", nextStop);
+
+    function* myGeneratorFunction() {
+      yield "PoughKeepsie";
+      yield "Newburgh";
+      yield "Peekskill";
+      yield "Yonkers";
+      yield "Bronx";
+      yield "Grand Central";
+    }
+
+    const myGenerator = myGeneratorFunction();
+
+    function nextStop() {
+      const getValue = myGenerator.next();
+      if (getValue.done) {
+        console.log("We Made It!");
+        nextStopBtn.setAttribute("disabled", true);
+      } else {
+        console.log(getValue.value);
+      }
+    }
 
   </script>
 </body>
