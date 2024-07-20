@@ -9,13 +9,25 @@
 </head>
 
 <body>
-  <!-- To run this file right click the file in the navigation bar and select "Open with live server. Then open the developer tools in the browser and head to the console window."-->
 
-  <!-- Use this element to generate your menu -->
   <ul id="combined-menu"></ul>
 
   <script>
-    // Write your code here
+    function foodTruckFestival(menu) {
+      const allMenu = menu.flat();
+      const masterMenu = new Set(allMenu);
+
+      const combinedMenu = document.getElementById("combined-menu");
+
+      masterMenu.forEach(item => {
+        const listItem = document.createElement("li");
+        listItem.textContent = item;
+        combinedMenu.appendChild(listItem);
+      })
+    }
+
+    foodTruckFestival([["pizza", "pasta"], ["pizza", "calzones"], ["lobster"], ["calzones"]])
+
 
   </script>
 </body>
