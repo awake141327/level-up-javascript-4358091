@@ -8,4 +8,4 @@ function scrabble(word) {
 }
 
 const ans = scrabble("card");
-console.log(ans);
+console.log(ans)
